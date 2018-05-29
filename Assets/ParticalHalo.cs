@@ -5,15 +5,14 @@ using UnityEngine;
 public class ParticalHalo : MonoBehaviour {
 	private ParticleSystem particleSys;  // 粒子系统  
 	private ParticleSystem.Particle[] particleArr;  // 粒子数组  
-	private CirclePosition[] circle; // 极坐标数组  
-	public int count = 10000;       // 粒子数量  
-	public float size = 0.06f;      // 粒子大小  
-	public float minRadius = 5.0f;  // 最小半径  
-	public float maxRadius = 12.0f; // 最大半径  
-	public bool clockwise = true;   // 顺时针|逆时针  
-	public float speed = 2f;        // 速度  
+	private CirclePosition[] circle;  
+	public int count = 10000;         
+	public float size = 0.06f;        
+	public float minRadius = 5.0f;   
+	public float maxRadius = 12.0f;  
+	public bool clockwise = true;    
+	public float speed = 2f;          
 	public float pingPong = 0.02f;  // 游离范围  
-	public float tier = 10.0f;
 	public Gradient colorGradient;
 	// Use this for initialization
 	void Start () {
@@ -35,9 +34,9 @@ public class ParticalHalo : MonoBehaviour {
 		for (int i = 0; i < count; i++)  
 		{  
 			if (clockwise)  // 顺时针旋转  
-				circle[i].angle -= (i % tier + 1) * (speed / circle[i].radius / tier);   
+				circle[i].angle -= Time.deltaTime * speed / 10; 
 			else            // 逆时针旋转  
-				circle[i].angle += (i % tier + 1) * (speed / circle[i].radius / tier); 
+				circle[i].angle += Time.deltaTime * speed / 10;  
 
 			// 保证angle在0~360度  
 			circle[i].angle = (360.0f + circle[i].angle) % 360.0f;  
@@ -91,8 +90,8 @@ public class CirclePosition
 	public float radius = 0f, angle = 0f, time = 0f;  
 	public CirclePosition(float radius, float angle, float time)  
 	{  
-		this.radius = radius;   // 半径  
-		this.angle = angle;     // 角度  
-		this.time = time;       // 时间  
+		this.radius = radius;    
+		this.angle = angle;      
+		this.time = time;        
 	}  
 }  

@@ -126,12 +126,12 @@ GameObject:
   - component: {fileID: 303423522}
   - component: {fileID: 303423521}
   m_Layer: 0
-  m_Name: anticlockwise_inner
+  m_Name: outer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &303423520
 Transform:
   m_ObjectHideFlags: 0
@@ -217,7 +217,6 @@ MonoBehaviour:
   clockwise: 1
   speed: 5
   pingPong: 0.02
-  tier: 10
   colorGradient:
     serializedVersion: 2
     key0: {r: 0.9558824, g: 0.02108566, b: 0.02108566, a: 1}
@@ -265,7 +264,6 @@ MonoBehaviour:
   clockwise: 0
   speed: 3
   pingPong: 0.06
-  tier: 10
   colorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -355,7 +353,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 864536264
+  randomSeed: -446743987
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3668,7 +3666,7 @@ GameObject:
   - component: {fileID: 378640096}
   - component: {fileID: 378640095}
   m_Layer: 0
-  m_Name: clockwise_outer
+  m_Name: inner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3759,7 +3757,6 @@ MonoBehaviour:
   clockwise: 1
   speed: 10
   pingPong: 0.02
-  tier: 10
   colorGradient:
     serializedVersion: 2
     key0: {r: 0.9705882, g: 0.035683367, b: 0.17108317, a: 1}
@@ -3849,7 +3846,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1131487908
+  randomSeed: 283155472
   InitialModule:
     serializedVersion: 3
     enabled: 1
